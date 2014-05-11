@@ -1,17 +1,17 @@
 Deck Master (MTG)
 =================
 <br/>
-## Clone our repo
+### Clone our repo
 ```bash
 $ git clone git@github.com:calamarico/deck-master.git
 ```
 
-## Install dependencies
+### Install dependencies
 ```bash
 $ npm install
 ```
 
-## Run grunt!
+### Run grunt!
 ```bash
 $ grunt
 Running "jshint:files" (jshint) task
