@@ -14,7 +14,7 @@
   "duplicate-properties": false,
   "empty-rules": true,
   "selector-max-approaching": true,
-  "gradients": true,
+  "gradients": false,
   "fallback-colors": false,
   "font-sizes": true,
   "font-faces": true,

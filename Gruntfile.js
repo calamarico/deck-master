@@ -27,7 +27,12 @@ module.exports = function(grunt) {
       files: ['gruntfile.js', 'app/js/*.js', 'test/**/*.spec.js']
     },
     lesslint: {
-      src: ['app/styles/*.less']
+      src: ['app/styles/*.less'],
+      options: {
+        csslint: {
+          csslintrc: '.csslintrc'
+        }
+      }
     },
     less: {
       dev: {
@@ -51,7 +56,7 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      files: ['<%= jshint.files %>'],
+      files: ['<%= jshint.files %>', '<%= lesslint.src %>'],
       tasks: ['jshint', 'less']
     }
   });
