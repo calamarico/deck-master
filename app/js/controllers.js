@@ -32,7 +32,7 @@ angular.module('deckMasterApp')
             _set.sets.push(response.data[i]);
           }
         }
-        $scope.sets = _sets;
+        $scope.sets = _sets.reverse();
         console.log($scope.sets);
       }, function(error) {
         // TODO: error control
