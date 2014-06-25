@@ -1,2 +1,5 @@
 /* App.js */
-angular.module('deckMasterApp', []);
+angular.module('deckMasterApp', [])
+.run(['utils', function() {
+
+}]);
