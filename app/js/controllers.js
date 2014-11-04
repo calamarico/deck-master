@@ -41,6 +41,14 @@ angular.module('deckMasterApp')
 
     $scope.sets = null;
 
+    $scope.setSelectedSet = function(index) {
+      if ($scope.sets[index].isSelected) {
+        $scope.sets[index].isSelected = false;
+      } else {
+        $scope.sets[index].isSelected = true;
+      }
+    };
+
     setSetsInfo();
   }
 ]);
