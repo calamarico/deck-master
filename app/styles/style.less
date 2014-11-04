@@ -4,15 +4,57 @@
 @import "./variables.less";
 
 body {
-  #gradient > .vertical(@color-aqua; @color-light-cyan);
+  background-color: @color-black;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url('@{font-path}OpenSans-Regular-webfont.woff') format('woff'), url('@{font-path}OpenSans-Regular.ttf') format('truetype');
 }
 
 .sets-section {
   float: left;
   padding-top: 20px;
-  height: 500px;
+  height: 100%;
+  color: white;
+
+  .sets {
+    height: 100%;
+    width: 100%;
+    list-style-type: none;
+
+    > .set {
+      cursor: pointer;
+      height: 100%;
+
+      > .year {
+        display: inline-block;
+        font-family: @font-family-open-sans;
+        font-size: 12px;
+      }
+
+      > .counter {
+        float: right;
+        font-family: @font-family-open-sans;
+        font-size: 8px;
+      }
+
+      > .item {
+        margin-left: 5px;
+
+        &:hover {
+          background-color: fade(white, 50%)
+        }
+
+        > .name {
+          font-family: @font-family-open-sans;
+          font-size: 10px;
+        }
+      }
+    }
+  }
 }
 .main-section {
   float: right;
-  height: 500px;
+  height: 100%;
 }

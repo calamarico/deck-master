@@ -1,10 +1,15 @@
-<ul class="nav nav-pills nav-stacked">
-  <li data-ng-repeat="set in sets">
-    <a href="#">
-      <span class="badge pull-right"
-          data-ng-bind="set.sets.length">
-      </span>
-      {{set.fullYear}}
-    </a>
+<ul class="sets">
+  <li data-ng-repeat="set in sets"
+      class="set" data-ng-click="setSelectedSet($index)">
+    <p class="year" data-ng-bind="set.fullYear"></p>
+    <span class="counter"
+        data-ng-bind="set.sets.length">
+    </span>
+    <div data-ng-repeat="item in set.sets"
+        class="item"
+        data-ng-show="set.isSelected"
+        data-ng-click="$event.stopPropagation()">
+      <p class="name" data-ng-bind="item.name"></p>
+    </div>
   </li>
 </ul>
