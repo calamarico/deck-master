@@ -33,7 +33,6 @@ angular.module('deckMasterApp')
           }
         }
         $scope.sets = _sets.reverse();
-        console.log($scope.sets);
       }, function(error) {
         // TODO: error control
       });
@@ -50,5 +49,10 @@ angular.module('deckMasterApp')
     };
 
     setSetsInfo();
+  }
+])
+.controller('mainController', ['$scope',
+  function($scope) {
+    // TODO: Add logic.
   }
 ]);
