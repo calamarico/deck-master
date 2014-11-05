@@ -10,9 +10,9 @@ directive('card', function() {
   return {
     restrict: 'A',
     scope:{
-      card:'=card'
+      card: '=card'
     },
-    template:'<img ng-src="{{src}}" />',
+    templateUrl: 'templates/card.tmpl.html',
     link: function(scope, element, attributes) {
       var id = scope.card.id;
       scope.src = 'http://api.mtgdb.info/content/card_images/{id}.jpeg'
