@@ -2,8 +2,8 @@
  * Sets controller.
  */
 angular.module('deckMasterApp')
-.controller('setsController', ['$scope', 'mtgdbApi',
-  function($scope, mtgdb) {
+.controller('setsController', ['$scope', '$rootScope', 'mtgdbApi',
+  function($scope, $rootScope, mtgdb) {
     var _sets = [];
     /**
      * Sets scope.sets object from mtgdbApi.
@@ -46,6 +46,12 @@ angular.module('deckMasterApp')
       } else {
         $scope.sets[index].isSelected = true;
       }
+    };
+
+    $scope.setMainSelectedSet = function(event, item) {
+      event.stopPropagation();
+
+      $rootScope.mainSet = item;
     };
 
     setSetsInfo();

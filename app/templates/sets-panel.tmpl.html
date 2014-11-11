@@ -8,7 +8,7 @@
     <div data-ng-repeat="item in set.sets"
         class="item"
         data-ng-show="set.isSelected"
-        data-ng-click="$event.stopPropagation()">
+        data-ng-click="setMainSelectedSet($event, item)">
       <p class="name" data-ng-bind="item.name"></p>
     </div>
   </li>
