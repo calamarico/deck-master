@@ -2,8 +2,8 @@
  * Sets controller.
  */
 angular.module('deckMasterApp')
-.controller('setsController', ['$scope', 'mtgdbApi',
-  function($scope, mtgdb) {
+.controller('setsController', ['$scope', '$rootScope', 'mtgdbApi',
+  function($scope, $rootScope, mtgdb) {
     var _sets = [];
     /**
      * Sets scope.sets object from mtgdbApi.
@@ -11,6 +11,11 @@ angular.module('deckMasterApp')
     function setSetsInfo() {
       var i, _date, _fullYear;
 
+      /**
+       * Finds year inside set element.
+       * @param {Object} element set object.
+       * @param {index} index index.
+       */
       function findYear(element, index) {
         return element.fullYear === _fullYear;
       }
@@ -40,12 +45,27 @@ angular.module('deckMasterApp')
 
     $scope.sets = null;
 
+    /**
+     * Sets selected set in sets section.
+     * @param {number} index index selected.
+     */
     $scope.setSelectedSet = function(index) {
       if ($scope.sets[index].isSelected) {
         $scope.sets[index].isSelected = false;
       } else {
         $scope.sets[index].isSelected = true;
       }
+    };
+
+    /**
+     * Sets main selected set showed in main section.
+     * @param {Object} event click event object.
+     * @param {Object} item set selected object.
+     */
+    $scope.setMainSelectedSet = function(event, item) {
+      event.stopPropagation();
+
+      $rootScope.mainSet = item;
     };
 
     setSetsInfo();

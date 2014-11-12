@@ -18,15 +18,21 @@ angular.module('deckMasterApp')
 directive('card', function() {
   return {
     restrict: 'A',
-    scope:{
+    replace: true,
+    /**
+     * Scope:
+     *  - card {number}: card id.
+     */
+    scope: {
       card: '=card'
     },
     templateUrl: 'templates/card.tmpl.html',
     link: function(scope, element, attributes) {
-      var id = scope.card.id;
+      var id = scope.card;
       scope.src = 'http://api.mtgdb.info/content/card_images/{id}.jpeg'
         .replace('{id}', id);
-      element.bind('on', function(){
+      // TODO: bind will be deprecated, better use of on and off.
+      element.bind('on', function() {
         element.addClass('loaded');
       });
       //@TODO implement UI Bootstrap
