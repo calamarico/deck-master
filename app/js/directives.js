@@ -35,13 +35,6 @@ directive('card', function() {
       element.bind('on', function() {
         element.addClass('loaded');
       });
-      //@TODO implement UI Bootstrap
-      //element.on('click', function(){
-      //  $modal.open({
-      //    template: '<img ng-src="{src}" />'.replace('{src}', scope.src),
-      //    size: 'sm'
-      //  });
-      //});
     }
   };
 });
