@@ -9,16 +9,18 @@
     <link rel="stylesheet" type="text/css" href="styles/css/style.css">
   </head>
   <body ng-app="deckMasterApp">
-    <header></header>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <p class="title">Deck Master</p>
+    </nav>
     <div class="container">
-        <div class="row">
-            <div class="col-md-4 sets-section">
-                <div data-sets-panel></div>
-            </div>
-            <div class="col-md-8 main-section">
-                <div data-main-section></div>
-            </div>
+      <div class="row">
+        <div class="col-md-4 sets-section">
+          <div data-sets-panel></div>
         </div>
+        <div class="col-md-8 main-section">
+          <div data-main-section></div>
+        </div>
+      </div>
     </div>
     <footer></footer>
     <script src="libs/angular/angular.js"></script>
