@@ -12,18 +12,12 @@
     <nav class="navbar navbar-default navbar-fixed-top">
       <p class="title">Deck Master</p>
     </nav>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4 sets-section">
-          <div data-sets-panel></div>
-        </div>
-        <div class="col-md-8 main-section">
-          <div data-main-section></div>
-        </div>
-      </div>
+    <div class="container" data-ng-view>
     </div>
     <footer></footer>
     <script src="libs/angular/angular.js"></script>
+    <script src="libs/angular/angular-route.js"></script>
+    <script src="libs/angular/angular-animate.js"></script>
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/directives.js"></script>
