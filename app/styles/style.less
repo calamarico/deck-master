@@ -5,11 +5,20 @@
 
 body {
   background-color: @color-black;
+
+  .container {
+    margin-top: @navbar-height;
+  }
 }
 
 @font-face {
   font-family: "OpenSans";
   src: url('@{font-path}OpenSans-Regular-webfont.woff') format('woff'), url('@{font-path}OpenSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Stalemate";
+  src: url('@{font-path}Stalemate-Regular.ttf') format('truetype');
 }
 
 .sets-section {
@@ -76,6 +85,7 @@ body {
         }
 
         &:hover {
+          z-index: 100;
           -webkit-transform:scale(@image-scale-hover);
           -moz-transform:scale(@image-scale-hover);
           -ms-transform:scale(@image-scale-hover);
@@ -100,5 +110,20 @@ body {
     border: 1px solid #ddd;
     vertical-align: middle;
     box-shadow: 0 5px 5px rgba(0,0,0,0.3);
+  }
+}
+
+nav {
+  height: @navbar-height;
+  background-color: @color-navbar !important;
+  border: none !important;
+  z-index: 10 !important;
+
+  .title {
+    color: green;
+    font-family: @font-familiy-stalemate;
+    font-size: 45px;
+    line-height: 66px;
+    padding-left: 20px;
   }
 }
