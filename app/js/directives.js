@@ -37,4 +37,12 @@ directive('card', function() {
       });
     }
   };
+})
+.directive('navbar', function() {
+  return {
+    templateUrl: 'templates/navbar.tmpl.html',
+    controller: 'navbarController',
+    replace: true,
+    restrict: 'A'
+  };
 });

@@ -75,4 +75,9 @@ angular.module('deckMasterApp')
   function($scope) {
     // TODO: Add logic.
   }
+])
+.controller('navbarController', ['$scope',
+  function($scope) {
+    // TODO: Add logic.
+  }
 ]);
