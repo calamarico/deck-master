@@ -4,16 +4,18 @@ angular.module('deckMasterApp', ['ngRoute', 'ngAnimate'])
   function($routeProvider) {
     $routeProvider
     .when('/', {
+      redirectTo: '/seeker'
+    })
+    .when('/seeker', {
       templateUrl: 'templates/seeker.tmpl.html',
       pageTitle: 'Deck Master - Seeker'
     })
-
-    // TODO: Add deck section
-    // .otherwise({
-    //   templateUrl: 'templates/deck.tmpl.html'
-    // });
+    .when('/deck', {
+      templateUrl: 'templates/deck.tmpl.html',
+      pageTitle: 'Deck Master - Deck'
+    })
     .otherwise({
-      templateUrl: 'templates/seeker.tmpl.html'
+      redirectTo: '/'
     });
   }
 ])
