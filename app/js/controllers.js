@@ -75,4 +75,23 @@ angular.module('deckMasterApp')
   function($scope) {
     // TODO: Add logic.
   }
+])
+.controller('navbarController', ['$scope', '$location',
+  function($scope, $location) {
+    var routes = {
+      seeker: '/seeker',
+      deck: '/deck'
+    };
+
+    $scope.swapViews = function() {
+      switch ($location.path()) {
+        case routes.seeker:
+          $location.path(routes.deck);
+          break;
+        case routes.deck:
+          $location.path(routes.seeker);
+          break;
+      }
+    };
+  }
 ]);
