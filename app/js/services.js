@@ -135,4 +135,22 @@ angular.module('deckMasterApp')
   return {
     isEven: isEven
   };
+}])
+
+/**
+ * Utils factory to provide some function utils.
+ */
+.factory('deckStorage', [function() {
+  var storage = localStorage.deckStorage || {};
+
+  /**
+   * Gets deck storage.
+   */
+  function getDeck() {
+    return storage;
+  }
+
+  return {
+    getDeck: getDeck
+  };
 }]);

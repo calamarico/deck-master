@@ -94,4 +94,9 @@ angular.module('deckMasterApp')
       }
     };
   }
+])
+.controller('deckController', ['$scope', 'deckStorage',
+  function($scope, deckStorage) {
+    $scope.deckStorage = deckStorage.getDeck();
+  }
 ]);
