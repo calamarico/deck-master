@@ -1,5 +1,5 @@
 /* App.js */
-angular.module('deckMasterApp', ['ngRoute', 'ngAnimate'])
+angular.module('deckMasterApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
 .config(['$routeProvider',
   function($routeProvider) {
     $routeProvider
