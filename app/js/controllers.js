@@ -71,9 +71,21 @@ angular.module('deckMasterApp')
     setSetsInfo();
   }
 ])
-.controller('mainController', ['$scope',
-  function($scope) {
-    // TODO: Add logic.
+.controller('mainController', ['$scope', '$modal',
+  function($scope, $modal) {
+    var modalInstance;
+
+    $scope.openModal = function() {
+      modalInstance = $modal.open({
+        templateUrl: 'templates/detailsModal.tmpl.html',
+        //controller: 'ModalInstanceCtrl',
+        resolve: {
+          items: function() {
+            return $scope.items;
+          }
+        }
+      });
+    };
   }
 ])
 .controller('navbarController', ['$scope', '$location',
