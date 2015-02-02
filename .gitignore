@@ -28,3 +28,4 @@ tmp
 temp
 /node_modules
 /app/styles/css
+/build
