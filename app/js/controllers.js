@@ -77,13 +77,8 @@ angular.module('deckMasterApp')
 
     $scope.openModal = function() {
       modalInstance = $modal.open({
-        templateUrl: 'templates/detailsModal.tmpl.html',
+        templateUrl: 'templates/detailsModal.tmpl.html'
         //controller: 'ModalInstanceCtrl',
-        resolve: {
-          items: function() {
-            return $scope.items;
-          }
-        }
       });
     };
   }
