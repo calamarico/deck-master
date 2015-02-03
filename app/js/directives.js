@@ -24,17 +24,16 @@ directive('card', function() {
      *  - card {number}: card id.
      */
     scope: {
-      card: '=card'
+      card: '=card',
+      hiRes: '=?'
     },
     templateUrl: 'templates/card.tmpl.html',
     link: function(scope, element, attributes) {
       var id = scope.card;
-      scope.src = 'http://api.mtgdb.info/content/card_images/{id}.jpeg'
+      scope.src = (scope.hiRes ?
+        'http://api.mtgdb.info/content/hi_res_card_images/{id}.jpg' :
+        'http://api.mtgdb.info/content/card_images/{id}.jpeg')
         .replace('{id}', id);
-      // TODO: bind will be deprecated, better use of on and off.
-      element.bind('on', function() {
-        element.addClass('loaded');
-      });
     }
   };
 })
