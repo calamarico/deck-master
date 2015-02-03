@@ -84,15 +84,15 @@ body {
           height: 91px;
         }
 
-        &:hover {
-          position: relative;
-          -webkit-transform:scale(@image-scale-hover);
-          -moz-transform:scale(@image-scale-hover);
-          -ms-transform:scale(@image-scale-hover);
-          -o-transform:scale(@image-scale-hover);
-          transform:scale(@image-scale-hover);
-          z-index: 100;
-        }
+        // &:hover {
+        //   position: relative;
+        //   -webkit-transform:scale(@image-scale-hover);
+        //   -moz-transform:scale(@image-scale-hover);
+        //   -ms-transform:scale(@image-scale-hover);
+        //   -o-transform:scale(@image-scale-hover);
+        //   transform:scale(@image-scale-hover);
+        //   z-index: 100;
+        // }
       }
     }
   }
@@ -142,4 +142,15 @@ nav {
       font-size: 16px;
     }
   }
+}
+
+.modal-window {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Overriding modal-content class from angular-ui Bootstrap.
+.modal-content {
+  background-color: transparent !important;
 }

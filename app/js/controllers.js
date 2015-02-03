@@ -71,14 +71,19 @@ angular.module('deckMasterApp')
     setSetsInfo();
   }
 ])
-.controller('mainController', ['$scope', '$modal',
-  function($scope, $modal) {
+.controller('mainController', ['$scope', '$modal', '$rootScope',
+  function($scope, $modal, $rootScope) {
     var modalInstance;
 
-    $scope.openModal = function() {
+    /**
+     * Opens modal window with card detail.
+     * @param {Object} card card object.
+     */
+    $scope.openModal = function(card) {
+      $rootScope.selectedCard = card;
       modalInstance = $modal.open({
-        templateUrl: 'templates/detailsModal.tmpl.html'
-        //controller: 'ModalInstanceCtrl',
+        templateUrl: 'templates/detailsModal.tmpl.html',
+        size: 'sm'
       });
     };
   }
