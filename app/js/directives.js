@@ -23,28 +23,38 @@ angular.module('deckMasterApp')
     restrict: 'A'
   };
 })
-.directive('card', function() {
-  return {
-    restrict: 'A',
-    replace: true,
-    /**
-     * Scope:
-     *  - card {number}: card id.
-     */
-    scope: {
-      card: '=card',
-      hiRes: '=?'
-    },
-    templateUrl: 'templates/card.tmpl.html',
-    link: function(scope, element, attributes) {
-      var id = scope.card;
-      scope.src = (scope.hiRes ?
-        'http://api.mtgdb.info/content/hi_res_card_images/{id}.jpg' :
-        'http://api.mtgdb.info/content/card_images/{id}.jpeg')
-        .replace('{id}', id);
-    }
-  };
-})
+.directive('card', ['$rootScope', '$modal',
+  function($rootScope, $modal) {
+    var modalInstance;
+
+    return {
+      restrict: 'A',
+      replace: true,
+      /**
+       * Scope:
+       *  - card {number}: card id.
+       */
+      scope: {
+        card: '=card',
+        hiRes: '=?'
+      },
+      templateUrl: 'templates/card.tmpl.html',
+      link: function(scope, element, attributes) {
+        var id = scope.card;
+        scope.src = (scope.hiRes ?
+          'http://api.mtgdb.info/content/hi_res_card_images/{id}.jpg' :
+          'http://api.mtgdb.info/content/card_images/{id}.jpeg')
+          .replace('{id}', id);
+        element.on('click', function(event) {
+          $rootScope.selectedCard = id;
+          modalInstance = $modal.open({
+            templateUrl: 'templates/detailsModal.tmpl.html',
+            size: 'sm'
+          });
+        });
+      }
+    };
+}])
 .directive('navbar', function() {
   return {
     templateUrl: 'templates/navbar.tmpl.html',

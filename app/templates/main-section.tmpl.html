@@ -2,7 +2,7 @@
   <ul data-ng-show="$root.mainSet.cardIds.length"
       class="set-cards-container">
     <div data-ng-repeat="item in $root.mainSet.cardIds" class="item-card">
-      <div data-card="item" data-ng-click="openModal(item)"></div>
+      <div data-card="item"></div>
       <input type="checkbox"
           class="input-checkbox"
           data-ng-model="$root.newDeckItems[item]"
