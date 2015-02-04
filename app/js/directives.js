@@ -14,8 +14,16 @@ angular.module('deckMasterApp')
     replace: true,
     restrict: 'A'
   };
-}).
-directive('card', function() {
+})
+.directive('deckSection', function() {
+  return {
+    templateUrl: 'templates/deck-section.tmpl.html',
+    controller: 'deckController',
+    replace: true,
+    restrict: 'A'
+  };
+})
+.directive('card', function() {
   return {
     restrict: 'A',
     replace: true,
