@@ -76,6 +76,16 @@ angular.module('deckMasterApp')
     var modalInstance;
 
     /**
+     * Executes after changes occurs in card checkboxes.
+     * @param {number} item card id.
+     */
+    $scope.statusCheckedChange = function(item) {
+      if (!$rootScope.newDeckItems[item]) {
+        delete $rootScope.newDeckItems[item];
+      }
+    };
+
+    /**
      * Opens modal window with card detail.
      * @param {Object} card card object.
      */

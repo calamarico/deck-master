@@ -19,5 +19,7 @@ angular.module('deckMasterApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
     });
   }
 ])
-.run(['utils', function() {
+.run(['$rootScope', 'utils', function($rootScope, utils) {
+  // Init store to save cards.
+  $rootScope.newDeckItems = {};
 }]);
