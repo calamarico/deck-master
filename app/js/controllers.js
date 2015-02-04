@@ -116,4 +116,9 @@ angular.module('deckMasterApp')
       }
     };
   }
+])
+.controller('deckController', ['$scope',
+  function($scope) {
+    
+  }
 ]);
