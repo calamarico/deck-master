@@ -36,6 +36,7 @@ angular.module('deckMasterApp')
        */
       scope: {
         card: '=card',
+        modal: '@?',
         hiRes: '=?'
       },
       templateUrl: 'templates/card.tmpl.html',
@@ -45,13 +46,18 @@ angular.module('deckMasterApp')
           'http://api.mtgdb.info/content/hi_res_card_images/{id}.jpg' :
           'http://api.mtgdb.info/content/card_images/{id}.jpeg')
           .replace('{id}', id);
-        element.on('click', function(event) {
-          $rootScope.selectedCard = id;
-          modalInstance = $modal.open({
-            templateUrl: 'templates/detailsModal.tmpl.html',
-            size: 'sm'
+        if (scope.modal) {
+          element.on('click', function(event) {
+            $rootScope.selectedCard = id;
+            modalInstance = $modal.open({
+              templateUrl: 'templates/detailsModal.tmpl.html',
+              size: 'sm'
+            });
           });
-        });
+          scope.$on('$destroy', function() {
+            element.off('click');
+          });
+        }
       }
     };
 }])
