@@ -21,6 +21,14 @@ body {
   src: url('@{font-path}Stalemate-Regular.ttf') format('truetype');
 }
 
+h3 {
+  margin: 0;
+  font-family: @font-family-open-sans;
+  font-size: 17px;
+  text-align: center;
+  padding: 2px;
+}
+
 .sets-section {
   float: left;
   padding-top: 20px;
@@ -69,6 +77,53 @@ body {
   height: 100%;
 
   > .main {
+
+    > .filter-bar {
+      display: block;
+      height: 180px;
+      width: 700px;
+      background-color: green;
+
+      > div {
+        padding: 2px 5px;
+        float: left;
+      }
+
+      > .card-type-section {
+        width: 250px;
+        height: 100%;
+        background-color: blue;
+
+        ul {
+          list-style-type: none;
+          padding: 10px;
+
+          li {
+            cursor: pointer;
+            .disable-text-highlighting();
+
+            &.enabled {
+              text-shadow: 
+                0 0 20px rgba(0,255,0,1), 
+                0 0 20px rgba(0,255,0,1), 
+                0 0 20px rgba(0,255,0,1);
+            }
+          }
+        }
+      }
+
+      > .cost-mana-section {
+        width: 225px;
+        height: 100%;
+        background-color: red;
+      }
+
+      > .color-section {
+        width: 225px;
+        height: 100%;
+        background-color: yellow;
+      }
+    }
 
     > .set-cards-container {
       height: 100%;
@@ -179,4 +234,14 @@ nav {
 // Overriding modal-content class from angular-ui Bootstrap.
 .modal-content {
   background-color: transparent !important;
+}
+
+// General classes
+.disable-text-highlighting {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }

@@ -19,7 +19,33 @@ angular.module('deckMasterApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
     });
   }
 ])
-.run(['$rootScope', 'utils', function($rootScope, utils) {
-  // Init store to save cards.
-  $rootScope.newDeckItems = {};
+.constant('cardTypes', {
+    criatura: {
+      name: 'Criatura',
+      enabled: false
+    },
+    instantaneo: {
+      name: 'Instantaneo',
+      enabled: false
+    },
+    artefacto: {
+      name: 'Artefacto',
+      enabled: false
+    },
+    conjuro: {
+      name: 'Conjuro',
+      enabled: false
+    },
+    encantamiento: {
+      name: 'Encantamiento',
+      enabled: false
+    }
+})
+.run(['$rootScope', 'utils', 'cardTypes',
+  function($rootScope, utils, cardTypes) {
+    // Init store to save cards.
+    $rootScope.newDeckItems = {};
+    $rootScope.constants = {
+      cardTypes: cardTypes
+    };
 }]);
