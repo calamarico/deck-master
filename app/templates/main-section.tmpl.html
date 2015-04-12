@@ -3,38 +3,32 @@
     <div class="card-type-section">
       <h3>Tipo de carta</h3>
       <ul>
-        <li data-ng-bind="$root.constants.cardTypes.criatura.name"
-            data-ng-click="$root.constants.cardTypes.criatura.enabled =
-              !$root.constants.cardTypes.criatura.enabled"
-            data-ng-class="{'enabled': $root.constants.cardTypes.criatura.enabled}">
-        </li>
-        <li data-ng-bind="$root.constants.cardTypes.instantaneo.name"
-            data-ng-click="$root.constants.cardTypes.instantaneo.enabled =
-              !$root.constants.cardTypes.instantaneo.enabled"
-            data-ng-class="{'enabled': $root.constants.cardTypes.instantaneo.enabled}">
-        </li>
-        <li data-ng-bind="$root.constants.cardTypes.artefacto.name"
-            data-ng-click="$root.constants.cardTypes.artefacto.enabled =
-              !$root.constants.cardTypes.artefacto.enabled"
-            data-ng-class="{'enabled': $root.constants.cardTypes.artefacto.enabled}">
-        </li>
-        <li data-ng-bind="$root.constants.cardTypes.conjuro.name"
-            data-ng-click="$root.constants.cardTypes.conjuro.enabled =
-              !$root.constants.cardTypes.conjuro.enabled"
-            data-ng-class="{'enabled': $root.constants.cardTypes.conjuro.enabled}">
-        </li>
-        <li data-ng-bind="$root.constants.cardTypes.encantamiento.name"
-            data-ng-click="$root.constants.cardTypes.encantamiento.enabled =
-              !$root.constants.cardTypes.encantamiento.enabled"
-            data-ng-class="{'enabled': $root.constants.cardTypes.encantamiento.enabled}">
+        <li data-ng-repeat="item in $root.constants.cardTypes"
+            data-ng-bind="item.name"
+            data-ng-click="item.enabled = !item.enabled"
+            data-ng-class="{'enabled': item.enabled}">
         </li>
       </ul>
     </div>
     <div class="cost-mana-section">
       <h3>Coste de mana</h3>
+      <ul>
+        <li data-ng-repeat="item in $root.constants.manaCost"
+            data-ng-bind="item.name"
+            data-ng-click="item.enabled = !item.enabled"
+            data-ng-class="{'enabled': item.enabled}">
+        </li>
+      </ul>
     </div>
     <div class="color-section">
       <h3>Color</h3>
+      <ul>
+        <li data-ng-repeat="item in $root.constants.colors"
+            data-ng-bind="item.name"
+            data-ng-click="item.enabled = !item.enabled"
+            data-ng-class="{'enabled': item.enabled}">
+        </li>
+      </ul>
     </div>
   </div>
   <ul data-ng-show="$root.mainSet.cardIds.length"

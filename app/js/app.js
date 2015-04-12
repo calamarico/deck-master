@@ -20,32 +20,78 @@ angular.module('deckMasterApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
   }
 ])
 .constant('cardTypes', {
-    criatura: {
-      name: 'Criatura',
-      enabled: false
-    },
-    instantaneo: {
-      name: 'Instantaneo',
-      enabled: false
-    },
-    artefacto: {
-      name: 'Artefacto',
-      enabled: false
-    },
-    conjuro: {
-      name: 'Conjuro',
-      enabled: false
-    },
-    encantamiento: {
-      name: 'Encantamiento',
-      enabled: false
-    }
+  criatura: {
+    name: 'Criatura',
+    enabled: false
+  },
+  instantaneo: {
+    name: 'Instantaneo',
+    enabled: false
+  },
+  artefacto: {
+    name: 'Artefacto',
+    enabled: false
+  },
+  conjuro: {
+    name: 'Conjuro',
+    enabled: false
+  },
+  encantamiento: {
+    name: 'Encantamiento',
+    enabled: false
+  }
 })
-.run(['$rootScope', 'utils', 'cardTypes',
-  function($rootScope, utils, cardTypes) {
+.constant('manaCost', {
+  small: {
+    name: '0-1',
+    enabled: false
+  },
+  medium: {
+    name: '2-3',
+    enabled: false
+  },
+  middle: {
+    name: '4-5',
+    enabled: false
+  },
+  big: {
+    name: '6+',
+    enabled: false
+  }
+})
+.constant('colors', {
+  white: {
+    name: 'White',
+    enabled: false
+  },
+  blue: {
+    name: 'Blue',
+    enabled: false
+  },
+  black: {
+    name: 'Black',
+    enabled: false
+  },
+  red: {
+    name: 'Red',
+    enabled: false
+  },
+  green: {
+    name: 'Green',
+    enabled: false
+  },
+  uncolor: {
+    name: 'No color',
+    enabled: false
+  }
+})
+.run(['$rootScope', 'utils', 'cardTypes', 'manaCost', 'colors',
+  function($rootScope, utils, cardTypes, manaCost, colors) {
     // Init store to save cards.
     $rootScope.newDeckItems = {};
     $rootScope.constants = {
-      cardTypes: cardTypes
+      cardTypes: cardTypes,
+      manaCost: manaCost,
+      colors: colors
     };
 }]);

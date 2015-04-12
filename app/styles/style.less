@@ -93,35 +93,21 @@ h3 {
         width: 250px;
         height: 100%;
         background-color: blue;
-
-        ul {
-          list-style-type: none;
-          padding: 10px;
-
-          li {
-            cursor: pointer;
-            .disable-text-highlighting();
-
-            &.enabled {
-              text-shadow: 
-                0 0 20px rgba(0,255,0,1), 
-                0 0 20px rgba(0,255,0,1), 
-                0 0 20px rgba(0,255,0,1);
-            }
-          }
-        }
+        .filters-section();
       }
 
       > .cost-mana-section {
         width: 225px;
         height: 100%;
         background-color: red;
+        .filters-section();
       }
 
       > .color-section {
         width: 225px;
         height: 100%;
         background-color: yellow;
+        .filters-section();
       }
     }
 
@@ -244,4 +230,23 @@ nav {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.filters-section {
+  ul {
+    list-style-type: none;
+    padding: 10px;
+
+    li {
+      cursor: pointer;
+      .disable-text-highlighting();
+
+      &.enabled {
+        text-shadow: 
+          0 0 20px rgba(0,255,0,1), 
+          0 0 20px rgba(0,255,0,1), 
+          0 0 20px rgba(0,255,0,1);
+      }
+    }
+  }
 }
