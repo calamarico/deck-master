@@ -4,10 +4,10 @@ angular.module('deckMasterApp')
  */
 .factory('mtgdbApi', ['$http', function($http) {
 
-  var host = 'http://api.mtgdb.info/',
+  var host = 'https:/api.deckbrew.com/',
     routes = {
-      cards: 'cards/',
-      sets: 'sets/'
+      cards: 'mtg/cards/',
+      sets: 'mtg/sets/'
     };
 
   /**
